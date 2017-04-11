@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CbcBlog</title>
+    <title>Comer, beber y conocer</title>
     <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <header>
+      <input type="checkbox" id="btn-menu">
+      <label for="btn-menu" class="icon-menu"></label>
+
+      <nav class= "menu">
+        <ul style="margin-right: -4px;">
+          <li>
+            <%= link_to "Inicio", root_path %>
+          </li>
+          <li class="sub-menu">
+            <a href="#">Categorías<span class="icon-down-open"></span></a>
+            <ul>
+              <li><a href="#">Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+            </ul>
+          </li>
+          <li>
+            Otra cosa
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <%= yield %>
   </body>
 </html>
