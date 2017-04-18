@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function(){
+  $(".sub-menu").click(function(){
+    $(this).children("ul").slideToggle();
+  })
+
+  $("ul").click(function(p){
+    p.stopPropagation();
+  })
+})
