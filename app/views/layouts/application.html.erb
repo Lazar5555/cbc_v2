@@ -12,30 +12,10 @@
 
   <body>
 
-    <header>
-      <input type="checkbox" id="btn-menu">
-      <label for="btn-menu" class="icon-menu"></label>
-      <nav class="menu">
-        <ul>
-          <li><a href="#">Item 1</a></li>
-          <li class="sub-menu"><a href="#">Item 2<span class="icon-down-open"></span></a>
-            <ul>
-              <li><a href="#">Sub Item 1</a></li>
-              <li><a href="#">Sub Item 2</a></li>
-              <li><a href="#">Sub Item 3</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu"><a href="#">Item 3<span class="icon-down-open"></span></a>
-            <ul>
-              <li><a href="#">Sub Item 1</a></li>
-              <li><a href="#">Sub Item 2</a></li>
-              <li><a href="#">Sub Item 3</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Item 4</a></li>
-        </ul>
-      </nav>
-    </header>
+    <%= render "partials/navigation" %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </body>
