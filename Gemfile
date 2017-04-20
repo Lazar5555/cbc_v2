@@ -37,6 +37,10 @@ gem 'jbuilder', '~> 2.5'
 
 #DEVISE
 gem 'devise', '~> 4.2'
+#JQUERY turbolinks
+gem 'jquery-turbolinks'
+#PAPERCLIP
+gem 'paperclip'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

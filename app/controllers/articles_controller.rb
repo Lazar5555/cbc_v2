@@ -1,11 +1,15 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_article, except: [:index, :new, :create]
+
   def index
     @articles = Article.all
     @articles_all = Article.all.count
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article.update_visits_count
+    @comment = Comment.new
   end
 
   def new
@@ -13,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
       redirect_to @article
     else
@@ -22,11 +26,10 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to @article
     else
@@ -35,16 +38,22 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
 
     redirect_to articles_path
   end
 
   private
-
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :cover)
+  end
+
+  def validate_user
+    redirect_to new_user_session_path, notice: "Necesitas iniciar sesión antes"
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 
 end
