@@ -1,6 +1,10 @@
-<% @articles.each do |article| %>
-  <h1><%= link_to article.title, article %></h1>
-  <div>
-    <%= article.body %> - <%=  link_to "Eliminar", article, method: :delete, class:"txt-red" %>
+<h1 class="text-center">Artículos</h1>
+<section class="container" style="margin:0 auto;">
+  <div class="row">
+    <%= render @articles %>
   </div>
-<%end%>
+
+  <div class="top-space text-center">
+    <%= will_paginate @articles %>
+  </div>
+</section>

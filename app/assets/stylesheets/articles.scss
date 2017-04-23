@@ -21,3 +21,34 @@
   font-size: 1.2em;
   padding: 10px 12px;
 }
+
+.relative{
+  position: relative;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.article-height{
+  height: 250px;
+}
+
+.article-width{
+  width: 100px;
+}
+
+.background-cover{
+  background-position: center;
+  background-size: cover;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+<div class="col-md-4 col-xs-12 top-space">
+  <div class=" Aligner box relative article-height">
+    <div class="absolute article-height background-cover" style="background:url(<%= article.cover.url(:thumb)%>);top:0px;left:0px;width:100%;">
+
+    </div>
+    <div class="absolute article-height background-cover" style="background:rgba(0,0,0,0.5);top:0px;left:0px;width:100%;">
+
+    </div>
+
+    <div class="relative text-center">
+      <h2><%= link_to article.title, article %></h2>
+      <p>
+        <%= truncate(strip_tags(article.body), length: 50) %>
+      </p>
+    </div>
+  </div>
+</div>
+<% article.body %><%  link_to "Eliminar", article, method: :delete, class:"txt-red" %>

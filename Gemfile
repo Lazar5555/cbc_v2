@@ -41,10 +41,19 @@ gem 'devise', '~> 4.2'
 gem 'jquery-turbolinks'
 #PAPERCLIP
 gem 'paperclip'
+#AASM
+gem 'aasm'
+#Will Paginate
+gem 'will_paginate'
+#Epic-editor
+gem 'epic-editor-rails', :git => 'https://github.com/GioRosales/epic-editor-rails.git'
+#Sanitize
+gem "sanitize"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "letter_opener"
 end
 
 group :development do

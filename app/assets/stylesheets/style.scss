@@ -22,6 +22,10 @@
   text-align: left;
 }
 
+.txt-blue{
+  color: blue !important;
+}
+
 a,a:visited{
   color: inherit;
   text-decoration: none;
@@ -60,7 +64,7 @@ header label{
 
 .menu a{
   display: block;
-  padding: 15px 20px;
+  padding: 25px 20px;
   color: #fff;
   text-decoration: none;
 }
@@ -76,6 +80,7 @@ header label{
 .menu ul li:hover ul{
   display: block;
   position: absolute;
+  z-index: 1;
 }
 
 @media(max-width: 768px){
@@ -90,6 +95,7 @@ header label{
     width: 100%;
     transform: translateX(-100%);
     transition: all 0.3s;
+    z-index: 1;
   }
 
   .menu ul{

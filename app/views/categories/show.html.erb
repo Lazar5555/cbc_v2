@@ -1,13 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1 style="color:<%=@category.color%>"><%= @category.name %></h1>
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<section class="container" style="margin: 0 auto;">
+  <h1 style="color:<%=@category.color%>"><%= @category.name %></h1>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
 
-<h2>Artículos</h2>
-<% @category.articles.each do |article| %>
-  <h3><%= link_to article.title, article %></h3>
-  <article>
-    <%= article.body %> - <%= link_to "Eliminar", article, method: :delete, class:"txt-red"%>
-  </article>
-<%end%>
+  <%= render @category.articles %>
+</section>
