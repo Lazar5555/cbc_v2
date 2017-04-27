@@ -1,5 +1,8 @@
-<% if user_signed_in? %>
-  <h1>Bienvenido <%= current_user.email %></h1>
-<%else%>
-  <h1>Bienvenido Perro</h1>
-<%end%>
+<div class="main_background">
+   <!-- <img src="/images/fondo_1.jpg" alt="fondo_1.jpg"> -->
+   <% if user_signed_in? %>
+     <h1>Bienvenido <%= current_user.email %></h1>
+   <%else%>
+     <h1>Bienvenido Perro</h1>
+   <%end%>
+</div>
