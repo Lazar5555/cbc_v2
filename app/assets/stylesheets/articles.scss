@@ -3,13 +3,24 @@
 }
 
 .form-control{
-  border: none;
-  border-bottom: 1px solid;
-  outline: none;
   width: 100%;
-  display: block;
-  padding: 10px 0px;
-  font-size: 1.2em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  // border: none;
+  // border-bottom: 1px solid;
+  // outline: none;
+  // width: 100%;
+  // display: block;
+  // padding: 10px 0px;
+  // font-size: 1.2em;
+}
+
+.form-control:focus {
+    border: 2px solid #ff5252;
 }
 
 .btn{

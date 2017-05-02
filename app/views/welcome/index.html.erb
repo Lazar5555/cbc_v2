@@ -1,8 +1,39 @@
-<div class="main_background">
-   <!-- <img src="/images/fondo_1.jpg" alt="fondo_1.jpg"> -->
-   <% if user_signed_in? %>
-     <h1>Bienvenido <%= current_user.email %></h1>
-   <%else%>
-     <h1>Bienvenido Perro</h1>
-   <%end%>
-</div>
+<body class="bg">
+  <div class="center-xs" style="padding-top:2em;">
+    <img src="/images/cbc_logo.png" alt="cbc_logo.png" style="max-width:50%;">
+  </div>
+
+  <div class="row center-xs txt-white" style="width:100%; margin-top:2em;">
+    <div class="col-md-4 col-xs-12">
+      <div class="box back-light-red" style="padding: 10px 5px;border: outset #b71c1c">
+        <h1 class="antic-font">¿Quieres saber una opinion antes de salir a comer en GDL?</h1>
+        <p class="antic-font medium-font">¡Aquí te la damos!</p>
+      </div>
+    </div>
+  </div>
+
+ <% if user_signed_in? %>
+  <div class="center-xs txt-white" style="margin-top:2em;">
+    <h2 class="antic-font big-font">Bienvenido <%= current_user.name %></h2>
+  </div>
+ <%else%>
+   <div class="center-xs txt-white top-space big-font" style="width:100%;">
+     <div class="col-md-12">
+       <div class="box">
+         <%= link_to(new_user_session_path) do %>
+           <span class="icon-user antic-font">Iniciar sesión</span>
+         <%end%>
+       </div>
+     </div>
+
+     <div class="col-md-12">
+       <div class="box" style="margin-left:-25px;">
+         <%= link_to(new_user_registration_path) do %>
+           <span class="icon-user-plus antic-font">Registrarse</span>
+         <%end%>
+       </div>
+     </div>
+   </div>
+
+ <%end%>
+</body>

@@ -1,40 +1,30 @@
-<header>
+<header style="font-size:20px;">
   <input type="checkbox" id="btn-menu">
   <label for="btn-menu" class="icon-menu"></label>
   <nav class="menu">
     <ul>
-      <li><%= link_to "Inicio", root_path %></li>
-      <li><%= link_to "Artículos", articles_path %></li>
-      <li class="sub-menu"><a href="#">Item 2<span class="icon-down-open"></span></a>
-        <ul>
-          <li><a href="#">Sub Item 1</a></li>
-          <li><a href="#">Sub 2</a></li>
-          <li><a href="#">Sub Item 3</a></li>
-        </ul>
-      </li>
-      <li class="sub-menu"><a href="#">Categorías<span class="icon-down-open"></span></a>
+      <% unless current_page?(root_path)%>
+        <li>
+          <%= link_to "Inicio", root_path, class:"antic-font" %>
+        </li>
+      <%end%>
+      <li><%= link_to "Artículos", articles_path, class:"antic-font" %></li>
+      <li class="sub-menu"><a href="#" class="antic-font">Categorías<span class="icon-down-open"></span></a>
         <ul>
           <% @categories.each do |category| %>
             <li>
-              <%= link_to category.name, category %>
+              <%= link_to category.name, category, class:"antic-font" %>
             </li>
           <%end%>
-          <!-- <li><a href="#">Sub Item 1</a></li>
-          <li><a href="#">Sub Item 2</a></li>
-          <li><a href="#">Sub Item 3</a></li> -->
         </ul>
       </li>
-      <li><a href="#">Item 4</a></li>
+      <li><%= link_to "Recetas", recipes_path, class:"antic-font" %></a></li>
+      <li><%= link_to "Tienda", products_path, class:"antic-font" %></li>
       <% if user_signed_in? %>
-        <li>
-          <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete %>
-        </li>
-      <%else%>
-        <li>
-          <%= link_to "Iniciar sesión", new_user_session_path %>
-        </li>
-        <li>
-          <%= link_to "Crear cuenta", new_user_registration_path %>
+        <li id="profile" class="sub-menu" style="background:#ff5252;"><a href="#" class="antic-font">Perfil<span class="icon-down-open"></span> </a>
+          <ul>
+            <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class:"antic-font" %></li>
+          </ul>
         </li>
       <%end%>
     </ul>
