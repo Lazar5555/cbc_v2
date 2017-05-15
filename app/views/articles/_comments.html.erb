@@ -1,18 +1,25 @@
-<div class="gray-letters">
-    <div class="row">
-        <div class="col-xs-6">
-            Puedes dejar tus comentarios
-        </div>
+<div class="antic-font small-font">
+    <div class="row end-xs txt-main-red">
         <div class="col-xs-6">
             <%= @article.comments.count %> comentario(s)
         </div>
     </div>
 
-    <div>
-        <%= render "comments/form" %>
+    <div class="row center-xs">
+      <div class="col-md-6">
+        <% if user_signed_in? %>
+          <div>
+              <%= render "comments/form" %>
+          </div>
+        <%else%>
+          <div class="txt-main-red">
+            <%= link_to "Inicia sesión para poder comentar", new_user_session_path %>
+          </div>
+        <%end%>
+      </div>
     </div>
 
-    <div>
+    <div class="top-space" style="background:#ffebee; border-radius:15px;text-align:left;">
         <%= render @article.comments %>
     </div>
 </div>

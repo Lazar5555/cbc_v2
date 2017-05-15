@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.label :body, style:"display:none;"%>
+    <%= f.text_area :body, style:"width:350px; height:80px;"%>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear comentario", class:"small-btn"%>
   </div>
 <% end %>

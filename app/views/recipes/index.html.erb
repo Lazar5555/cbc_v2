@@ -16,7 +16,7 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.user %></td>
+        <td><%= recipe.user.email %></td>
         <td><%= recipe.title %></td>
         <td><%= recipe.description %></td>
         <td><%= recipe.video_link %></td>
@@ -29,9 +29,5 @@
 </table>
 
 <br>
-
-<iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-  frameborder="0"/>
 
 <%= link_to 'New Recipe', new_recipe_path %>

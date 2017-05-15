@@ -1,7 +1,6 @@
 *{
   margin: 0px;
   padding: 0px;
-  font-family:sans-serif;
 }
 
 body, html{
@@ -9,33 +8,59 @@ body, html{
 }
 
 //INPUT STYLES
-
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.form-control{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
+.form-control:focus {
+    border: 2px solid #ff5252;
+}
+
+.small-btn{
+  width: 60%;
+  background-color: #b71c1c;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.small-btn:hover{
+  background: #c62828;
+}
+
+.btn{
+    width: 30%;
+    background-color: #b71c1c;
     color: white;
+    font-size: 18px;
+    text-transform: uppercase;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
+.btn:hover {
+    background-color: #c62828;
 }
 
 //Global styles
+
+.double-top{
+  margin-top: 2em;
+}
 
 .bg{
   background: url('/images/fondo_1.jpg');
@@ -50,6 +75,10 @@ input[type=submit]:hover {
 
 .antic-font{
   font-family: 'Antic', sans-serif;
+}
+
+.small-font{
+  font-size: 18px;
 }
 
 .medium-font{
@@ -73,6 +102,10 @@ input[type=submit]:hover {
 
 .txt-white{
   color: #fff;
+}
+
+.txt-main-red{
+  color: #c62828;
 }
 
 .txt-red{

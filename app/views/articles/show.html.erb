@@ -1,26 +1,38 @@
 <%= render "partials/secondbg"%>
-<article class="bottom-space">
-  <%= article_cover @article.cover.url %>
-    <div class="row center-xs">
-        <div class="col-xs-12 light-border col-md-7">
-            <h1 class="be-big blue-letters "><%= @article.title %></h1>
-            <p class="text-right be-small">
-                <%= link_to "Atrás", articles_path, class: "underline" %> -
-                <span class="red-letters">
-                    <%= @article.visits_count %> visita(s)
-                </span> -
-                <% unless(@article.user.nil?) %>
-                    Escrito por <%= @article.user.email %>
-                <%end%>
-            </p>
+<%= article_cover @article.cover.url %>
+<div class="row center-xs" style="width:100%;">
+    <div class="col-xs-12 col-md-7">
+      <div class="box antic-font top-space">
+        <h1 class="big-font txt-main-red div-box" style="padding:5px;border-radius:10px;"><%= @article.title %></h1>
+        <p class="text-right small-font top-space">
+          <span class="txt-red">
+              <%= @article.visits_count %> visita(s)
+          </span> -
+          <% unless(@article.user.nil?) %>
+              Escrito por <%= @article.user.name %> (<%= @article.user.email %>)
+          <%end%>
+        </p>
 
-            <div class="text-justify">
-                <%= Sanitize.fragment(@article.body, Sanitize::Config::RELAXED).html_safe %>
-            </div>
-
-            <div class="top-space">
-                <%= render "articles/comments" %>
-            </div>
+        <div id="epiceditor" class="top-space div-box">
+          <textarea id="edit-area" style="display:none;"><%= @article.markup_body %></textarea>
         </div>
+
+      </div>
+
+      <div class="top-space">
+          <%= render "articles/comments" %>
+      </div>
     </div>
-</article>
+</div>
+
+<script>
+  var options = {
+    textarea: 'edit-area',
+    button:{
+      bar: false
+    },
+    autogrow: true
+  }
+  var show_body = new EpicEditor(options).load();
+  show_body.preview();
+</script>

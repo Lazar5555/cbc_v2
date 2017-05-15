@@ -1,11 +1,11 @@
 <%= render "partials/secondbg" %>
-<h1 class="text-center" style="z-index: 5;">Artículos</h1>
-<section class="container" style="margin:0 auto;">
+<section class="container antic-font" style="margin:0 auto; margin-top:4em;">
+  <h1 class="text-center gigant-font txt-main-red">Artículos</h1>
   <div class="row">
     <%= render @articles %>
   </div>
 
-  <div class="top-space text-center">
-    <%= will_paginate @articles %>
+  <div class="text-center" style="margin-top:2em;font-size:20px;">
+    <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente', class:"flickr_pagination" %>
   </div>
 </section>
