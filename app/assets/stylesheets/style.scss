@@ -58,9 +58,11 @@ body, html{
 
 //Global styles
 
-.double-top{
-  margin-top: 2em;
-}
+.new-object:hover{ color: #c62828 }
+
+.hard-link:hover{ color:red }
+
+.double-top{ margin-top: 2em }
 
 .bg{
   background: url('/images/fondo_1.jpg');

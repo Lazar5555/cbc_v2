@@ -1,3 +1,4 @@
+<%= render "partials/secondbg"%>
 <h1><%= name %> artículo</h1>
 <%= form_for(@article, html: {id: "articles_form"}) do |f| %>
   <% @article.errors.full_messages.each do |message|%>
