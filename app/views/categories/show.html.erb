@@ -1,14 +1,15 @@
 <%= render "partials/secondbg" %>
 
 <p id="notice"><%= notice %></p>
-
 <section class="container antic-font small-font" style="margin: 0 auto;">
   <h1 class="text-center top-space gigant-font" style="color:<%=@category.color%>"><%= @category.name %></h1>
-
+  <% if user_signed_in? && current_user.is_admin? %>
+    <div class="row end-xs medium-font"><%= link_to "Administrar categorías", categories_path, class:"new-object" %></div>
+  <%end%>
   <div class="row">
     <%= render @category.articles %>
   </div>
-</section>
+  <% if user_signed_in? && current_user.is_admin? %>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <%end%>
+</section>

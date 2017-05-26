@@ -3,8 +3,7 @@
 <div class="row center-xs" style="width:100%;">
     <div class="col-xs-12 col-md-7">
       <div class="box antic-font top-space">
-        <h1 class="big-font txt-main-red div-box" style="padding:5px;border-radius:10px;"><%= @article.title %></h1>
-        <p class="text-right small-font top-space">
+        <p class="text-right small-font top-space" style="margin-bottom:10px;">
           <span class="txt-red">
               <%= @article.visits_count %> visita(s)
           </span> -
@@ -12,6 +11,7 @@
               Escrito por <%= @article.user.name %> (<%= @article.user.email %>)
           <%end%>
         </p>
+        <h1 class="big-font txt-main-red div-box" style="padding:5px;border-radius:10px;"><%= @article.title %></h1>
 
         <div id="epiceditor" class="top-space div-box">
           <textarea id="edit-area" style="display:none;"><%= @article.markup_body %></textarea>

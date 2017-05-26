@@ -75,21 +75,13 @@ body, html{
   z-index: -1;
 }
 
-.antic-font{
-  font-family: 'Antic', sans-serif;
-}
+.antic-font{ font-family: 'Antic', sans-serif; }
 
-.small-font{
-  font-size: 18px;
-}
+.small-font{ font-size: 18px; }
 
-.medium-font{
-  font-size: 30px;
-}
+.medium-font{font-size: 30px;}
 
-.big-font{
-  font-size: 40px;
-}
+.big-font{ font-size: 40px;}
 
 .gigant-font{
   font-size: 50px;
@@ -113,10 +105,11 @@ body, html{
 .txt-red{
   color: rgb(255,0,0) !important;
 }
+.txt-black{color:black;}
 
-.txt-left{
-  text-align: left;
-}
+.txt-left{text-align: left;}
+.text-right{text-align: right;}
+.text-center{text-align: center;}
 
 .txt-blue{
   color: blue !important;

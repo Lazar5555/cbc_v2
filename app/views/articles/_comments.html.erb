@@ -13,12 +13,13 @@
           </div>
         <%else%>
           <div class="txt-main-red">
-            <%= link_to "Inicia sesión para poder comentar", new_user_session_path %>
+            <%= link_to "Inicia sesión para poder dejar un comentario", new_user_session_path %>
           </div>
         <%end%>
       </div>
     </div>
 
+    <p class="txt-left medium-font txt-main-red">Comentarios:</p>
     <div class="top-space" style="background:#ffebee; border-radius:15px;text-align:left;margin-bottom:1em;">
         <%= render @article.comments %>
     </div>
