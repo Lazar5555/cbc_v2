@@ -4,3 +4,29 @@
 .category-block{
   height: 100px;
 }
+
+.category-form{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.category-btn{
+  background-color: #b71c1c;
+  color: white;
+  font-size: 18px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.category-btn:hover {
+    background-color: #c62828;
+}

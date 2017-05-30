@@ -1,5 +1,9 @@
-<h1>New Category</h1>
+<%= render "partials/secondbg" %>
 
-<%= render 'form', category: @category %>
+<section class="container antic-font" style="margin:0 auto; margin-top:4em;">
+  <h1 class=" gigant-font text-center txt-main-red">Nueva categoría</h1>
 
-<%= link_to 'Back', categories_path %>
+  <%= render 'form', category: @category, action: "Crear" %>
+
+  <%= link_to 'Back', categories_path %>
+</section>

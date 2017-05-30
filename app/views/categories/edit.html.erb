@@ -1,9 +1,6 @@
 <%= render "partials/secondbg" %>
-<section class="container antic-font" style="margin: 0 auto; margin-top:4em; border: 1px solid red;">
-  <h1 class="gigant-font text-center txt-main-red">Editar categoría: <%= @category.name %></h1>
+<section class="container antic-font" style="margin: 0 auto; margin-top:4em;">
+  <h1 class="gigant-font text-center txt-main-red">Editar categoría: <p style="color:<%= @category.color %>"><%= @category.name %></p></h1>
 
-  <%= render 'form', category: @category %>
+  <%= render 'form', category: @category, action: "Actualizar" %>
 </section>
-
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
