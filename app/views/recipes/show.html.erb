@@ -1,26 +1,15 @@
 <%= render "partials/secondbg" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @recipe.user.name %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
-
-<p>
-  <strong>Video link:</strong>
-  <%= @recipe.video_link %>
-  <%= youtube_embed @recipe.video_link %>
-</p>
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<section class="container antic-font" style="margin:0 auto; margin-top:4em;">
+  <h1 class=" gigant-font txt-main-red text-center"><%= @recipe.title %></h1>
+  <div class="row center-xs">
+    <div class="col-md-10 ">
+      <div class="box top-space">
+        <%= youtube_embed @recipe.video_link %>
+        <p class="small-font text-right">Compartido por <%= @recipe.user.name %> (<%= @recipe.user.email %>)</p>
+        <p class="form-container txt-justify top-space"><%= @recipe.description %></p>
+      </div>
+    </div>
+  </div>
+</section>
