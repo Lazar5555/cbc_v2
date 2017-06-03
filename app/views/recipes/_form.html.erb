@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <p class="txt-left"><strong><%= f.label :title, "Título:" %></strong></p>
+    <%= f.text_field :title, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <p class="txt-left"><strong><%= f.label :description, "Descripción:" %></strong> </p>
+    <%= f.text_area :description, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :video_link %>
-    <%= f.text_area :video_link %>
+    <p class="txt-left"><strong><%= f.label :video_link, "Link del video:" %></strong></p>
+    <%= f.text_area :video_link, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear Receta", class:"category-btn" %>
   </div>
 <% end %>

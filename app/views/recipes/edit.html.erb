@@ -1,6 +1,14 @@
-<h1>Editing Recipe</h1>
+<%= render "partials/secondbg" %>
+<section class="container antic-font" style="margin:0 auto; margin-top:4em;">
+  <h1 class="gigant-font txt-main-red text-center">Editar receta: <%= @recipe.title %></h1>
 
-<%= render 'form', recipe: @recipe %>
+  <div class="row center-xs">
+    <div class="col-md-5 col-xs-12">
+      <div class="box small-font form-container top-space">
+        <%= render 'form', recipe: @recipe %>
 
-<%= link_to 'Show', @recipe %> |
-<%= link_to 'Back', recipes_path %>
+        <p class="txt-left top-space"><%= link_to 'Mostrar', @recipe %> | <%= link_to 'Regresar', recipes_path %></p>
+      </div>
+    </div>
+  </div>
+</section>

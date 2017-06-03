@@ -16,7 +16,7 @@
   <% if user_signed_in? && current_user.is_admin? %>
     <div style="margin-top:5px;">
       <%= link_to 'Editar', edit_recipe_path(recipe), class:"hard-link" %> |
-      <%= link_to 'Eliminar', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class:"hard-link" %>
+      <%= link_to 'Eliminar', recipe, method: :delete, data: { confirm: '¿Estás seguro?' }, class:"hard-link" %>
     </div>
   <%end%>
 </div>

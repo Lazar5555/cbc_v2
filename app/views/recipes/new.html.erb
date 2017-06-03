@@ -1,5 +1,15 @@
-<h1>New Recipe</h1>
+<%= render "partials/secondbg" %>
 
-<%= render 'form', recipe: @recipe %>
+<section class="container antic-font" style="margin: 0 auto; margin-top:4em;">
+  <h1 class="gigant-font txt-main-red text-center">Nueva receta</h1>
+  <div class="row center-xs" style="width:100%">
+    <div class="col-md-5 col-xs-12">
+      <div class="box form-container top-space small-font">
+        <%= render 'form', recipe: @recipe %>
+        <p class="txt-left"><%= link_to 'Regresar', recipes_path %></p>
+      </div>
 
-<%= link_to 'Back', recipes_path %>
+    </div>
+  </div>
+
+</section>
