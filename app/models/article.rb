@@ -17,7 +17,7 @@ class Article < ApplicationRecord
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
   scope :publicados, ->{ where(state: "published") }
-  scope :ultimos, -> { order("created_at DESC") }
+  scope :ultimos, -> { order("created_at ASC") }
 
   #Custom setter
   def categories=(value)
@@ -47,7 +47,7 @@ class Article < ApplicationRecord
   def send_mail
     ArticleMailer.new_article(self).deliver_later
   end
-  
+
   def save_categories
     unless @categories.nil?
       @categories.each do |category_id|

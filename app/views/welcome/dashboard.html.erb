@@ -1,10 +1,28 @@
-<% @articles.each do |article| %>
-  <h1><%= link_to article.title, article %></h1>
-  <div>
-    <%= article.body %> - <%=  link_to "Eliminar", article, method: :delete, class:"txt-red" %>
-    <% if article.may_publish? %>
-      <%= "- "%>
-      <%= link_to "Publicar", "/articles/#{article.id}/publish", method: :put, class:"txt-blue"%>
+<%= render "partials/secondbg" %>
+
+<section class="container antic-font" style="margin: 0 auto; margin-top:4em; border:2px solid red;">
+  <p class="text-center gigant-font txt-main-red">Bienvenido Admin</p>
+  <div class="row middle-xs">
+    <% @articles.each do |article|%>
+      <div class="col-md-6 col-xs-12">
+        <div class="shadow-box double-top" style="border-radius:10px;">
+          <h1 style="display:inline"><%= link_to article.title, article %> - </h1><%= article.created_at.strftime("%d %B %Y") %>
+          <div class="">
+            <%= strip_tags(article.body) %> - <%=  link_to "Eliminar", article, method: :delete, class:"txt-red" %>
+            <% if article.may_publish? %>
+              <%= "- "%>
+              <%= link_to "Publicar", "/articles/#{article.id}/publish", method: :put, class:"txt-blue"%>
+            <%end%>
+          </div>
+        </div>
+        <div class="box">
+          Hola mundo
+        </div>
+      </div>
     <%end%>
   </div>
-<%end%>
+</section>
+
+<div class="bubble-new">
+  Hola mundo
+</div>

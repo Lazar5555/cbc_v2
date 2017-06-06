@@ -3,6 +3,7 @@
   <h1 class="text-center gigant-font txt-main-red">Artículos</h1>
   <% if user_signed_in? && current_user.is_admin? %>
     <div class="row end-xs medium-font"><%= link_to "Nuevo artículo", new_article_path, class:"new-object" %></div>
+    <i class="fa fa-cogs" aria-hidden="true"></i>
   <%end%>
   <div class="row">
     <%= render @articles %>
