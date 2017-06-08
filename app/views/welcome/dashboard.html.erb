@@ -1,28 +1,44 @@
 <%= render "partials/secondbg" %>
 
-<section class="container antic-font" style="margin: 0 auto; margin-top:4em; border:2px solid red;">
-  <p class="text-center gigant-font txt-main-red">Bienvenido Admin</p>
+<section class="container antic-font" style="margin: 0 auto; margin-top:4em;">
+  <h1 class="text-center gigant-font txt-main-red">Bienvenido Admin</h1>
   <div class="row middle-xs">
     <% @articles.each do |article|%>
       <div class="col-md-6 col-xs-12">
         <div class="shadow-box double-top" style="border-radius:10px;">
-          <h1 style="display:inline"><%= link_to article.title, article %> - </h1><%= article.created_at.strftime("%d %B %Y") %>
-          <div class="">
-            <%= strip_tags(article.body) %> - <%=  link_to "Eliminar", article, method: :delete, class:"txt-red" %>
-            <% if article.may_publish? %>
-              <%= "- "%>
-              <%= link_to "Publicar", "/articles/#{article.id}/publish", method: :put, class:"txt-blue"%>
-            <%end%>
+          <h1 style="display:inline"><%= link_to article.title, article %> </h1><%= article.created_at.strftime("%d %B %Y") %>
+          <div>
+            <p style="text-align: justify;"><%= strip_tags(article.body) %></p>
           </div>
+          <% unless article.may_publish? %>
+            <p class="text-right"><i class="fa fa-check manage-button txt" style=" font-size: 25px;color:#0d47a1;"aria-hidden="true"></i><p>
+          <%end%>
         </div>
-        <div class="box">
-          Hola mundo
+        <div class="text-center txt-main-red small-font" style="margin-top:3px;">
+          <div class="tooltip">
+            <%= link_to(edit_article_path(article), id: "edit-button") do %>
+              <i class="fa fa-pencil manage-button" style="font-size:25px;" aria-hidden="true"></i>
+            <%end%>
+            <p class="tooltiptext">Editar</p>
+          </div>
+
+          <div class="tooltip">
+            <%= link_to(article, method: :delete, data: {confirm: "¿Estás seguro?"}) do %>
+                <i class="fa fa-trash manage-button" style="font-size:25px;" aria-hidden="true"></i>
+            <%end%>
+            <p class="tooltiptext">Eliminar</p>
+          </div>
+
+          <div class="tooltip">
+            <% if article.may_publish? %>
+              <%= link_to("/articles/#{article.id}/publish", method: :put) do %>
+                <i class="fa fa-plus manage-button" style="font-size:25px;" aria-hidden="true"></i>
+              <%end%>
+            <%end%>
+            <p class="tooltiptext">Publicar</p>
+          </div>
         </div>
       </div>
     <%end%>
   </div>
 </section>
-
-<div class="bubble-new">
-  Hola mundo
-</div>
