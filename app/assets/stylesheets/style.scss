@@ -7,6 +7,24 @@ body, html{
   height: 100%;
 }
 
+/*ROUND BUTTON from http://codeitdown.com/css-round-buttons/ */
+.round-button {
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border-radius: 50%;
+    text-align:center;
+    text-decoration:none;
+    background: #ff8a80;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+.round-button:hover {
+    background: #b71c1c;
+}
+
 /*TOOLTIPS from https://www.w3schools.com/css/css_tooltip.asp*/
 .tooltip {
     position: relative;
@@ -15,7 +33,7 @@ body, html{
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 140px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -25,7 +43,7 @@ body, html{
     z-index: 1;
     top: 150%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -70px;
 }
 
 .tooltip .tooltiptext::after {

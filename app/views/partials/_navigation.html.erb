@@ -23,6 +23,9 @@
       <% if user_signed_in? %>
         <li id="profile" class="sub-menu" style="background:#ff5252;"><a href="#" class="antic-font">Perfil<span class="icon-down-open"></span> </a>
           <ul>
+            <% if current_user.is_admin? %>
+              <li><%= link_to "Dashboard", "/dashboard", class:"antic-font", style:"padding-right: 0px;" %></li>
+            <%end%>
             <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class:"antic-font" %></li>
           </ul>
         </li>

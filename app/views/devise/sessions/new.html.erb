@@ -1,7 +1,7 @@
 <%= render "partials/secondbg" %>
 <div class="row center-xs" style="width:100%;">
   <div class="col-xs-8 col-md-6">
-    <div class="box txt-left antic-font" style="margin-top:12em;">
+    <div class="box txt-left antic-font form-container" style="margin-top:12em;">
 
       <h2 class="big-font">Iniciar sesión</h2>
 
@@ -31,5 +31,6 @@
       <%= render "devise/shared/links" %>
 
     </div>
+    <%= link_to "Change your password", edit_user_registration_path %>
   </div>
 </div>

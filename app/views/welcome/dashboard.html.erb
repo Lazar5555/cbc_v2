@@ -2,17 +2,25 @@
 
 <section class="container antic-font" style="margin: 0 auto; margin-top:4em;">
   <h1 class="text-center gigant-font txt-main-red">Bienvenido Admin</h1>
+  <div class="text-right">
+    <div class="tooltip">
+      <p><a class="round-button" href="/articles/new"><i class="fa fa-plus txt-white" style="font-size:23px;"aria-hidden="true"></i></a>
+      <p class="tooltiptext small-font">Agregar artículo</p>
+    </div>
+  </div>
   <div class="row middle-xs">
     <% @articles.each do |article|%>
       <div class="col-md-6 col-xs-12">
-        <div class="shadow-box double-top" style="border-radius:10px;">
+        <div class="shadow-box top-space" style="border-radius:10px;">
           <h1 style="display:inline"><%= link_to article.title, article %> </h1><%= article.created_at.strftime("%d %B %Y") %>
           <div>
             <p style="text-align: justify;"><%= strip_tags(article.body) %></p>
           </div>
+
           <% unless article.may_publish? %>
-            <p class="text-right"><i class="fa fa-check manage-button txt" style=" font-size: 25px;color:#0d47a1;"aria-hidden="true"></i><p>
+            <p class="text-right"><i class="fa fa-check manage-button" style=" font-size: 25px;color:#0d47a1;"aria-hidden="true"></i><p>
           <%end%>
+
         </div>
         <div class="text-center txt-main-red small-font" style="margin-top:3px;">
           <div class="tooltip">
@@ -32,7 +40,7 @@
           <div class="tooltip">
             <% if article.may_publish? %>
               <%= link_to("/articles/#{article.id}/publish", method: :put) do %>
-                <i class="fa fa-plus manage-button" style="font-size:25px;" aria-hidden="true"></i>
+                <i class="fa fa-check manage-button" style="font-size:25px;" aria-hidden="true"></i>
               <%end%>
             <%end%>
             <p class="tooltiptext">Publicar</p>
