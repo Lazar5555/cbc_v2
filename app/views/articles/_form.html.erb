@@ -1,5 +1,4 @@
-<%= render "partials/secondbg"%>
-<h1><%= name %> artículo</h1>
+<h1 class="text-center txt-main-red gigant-font"><%= name %> artículo</h1>
 <%= form_for(@article, html: {id: "articles_form"}) do |f| %>
   <% @article.errors.full_messages.each do |message|%>
     <div class="">
@@ -18,12 +17,12 @@
     <%= f.hidden_field :body, id:"body-textarea" %>
     <%= f.hidden_field :markup_body, id:"markup-body-textarea" %>
     <div id="epiceditor" style="height:300px;">
-      
+
     </div>
   </div>
 
   <div class="field">
-    <label>Categorías</label>
+    <label class="medium-font">Categorías</label>
     <% @categories.each do |category| %>
       <div class="field">
         <%= check_box_tag "categories[]", category.id %> <%= category.name%>

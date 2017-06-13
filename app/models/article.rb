@@ -13,7 +13,8 @@ class Article < ApplicationRecord
   after_create :send_mail
   #validates :username, format: { with: /regex/} Validating with regular expressions
 
-  has_attached_file :cover, styles: {medium: "1280x720", thumb: "800x600", mini: "400x200"}
+  has_attached_file :cover, styles: {medium: "1280x720", thumb: "800x600", mini: "400x200"}, default_url: "/images/missing.png"
+
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
 
   scope :publicados, ->{ where(state: "published") }
