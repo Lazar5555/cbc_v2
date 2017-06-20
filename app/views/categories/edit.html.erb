@@ -1,5 +1,6 @@
 <%= render "partials/secondbg" %>
 <section class="container antic-font" style="margin: 0 auto; margin-top:4em;">
+
   <h1 class="gigant-font text-center txt-main-red">Editar categoría: <p style="color:<%= @category.color %>"><%= @category.name %></p></h1>
 
   <%= render 'form', category: @category, action: "Actualizar" %>

@@ -13,23 +13,25 @@
 
   <div class="row center-xs">
     <div class="col-xs-6">
-      <div class="box small-font double-top">
-        <p class="txt-left"><%= f.label :name, "Nombre:" %></p>
-        <%= f.text_field :name, class:"category-form" %>
+      <div class="box form-container top-space">
+        <div class="box small-font double-top">
+          <p class="txt-left"><%= f.label :name, "Nombre:" %></p>
+          <%= f.text_field :name, class:"category-form" %>
 
-        <div class="txt-left top-space">
-          <%= f.label :color, "Color: " %>
-          <%= f.color_field :color %>
+          <div class="txt-left top-space">
+            <%= f.label :color, "Color: " %>
+            <%= f.color_field :color %>
+          </div>
+
+          <div class="top-space">
+            <%= f.submit "#{action} categoría", class:"category-btn"%>
+          </div>
+
+          <div class="txt-left">
+            <%= link_to 'Regresar', categories_path, class:"new-object" %>
+          </div>
+
         </div>
-
-        <div class="top-space">
-          <%= f.submit "#{action} categoría", class:"category-btn"%>
-        </div>
-
-        <div class="txt-left">
-          <%= link_to 'Regresar', categories_path, class:"new-object" %>
-        </div>
-
       </div>
     </div>
   </div>

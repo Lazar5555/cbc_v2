@@ -12,40 +12,38 @@
     <% @articles.each do |article|%>
       <div class="col-md-6 col-xs-12">
         <div class="shadow-box top-space" style="border-radius:10px;">
-          <h1 style="display:inline"><%= link_to article.title, article %> </h1><%= article.created_at.strftime("%d %B %Y") %>
+          <h1 class="<%= 'txt-main-red' unless article.may_publish? %>" style="display:inline"><%= link_to article.title, article %> </h1><p><%= article.created_at.strftime("%d %B %Y") %></p>
           <div>
-            <p style="text-align: justify;"><%= strip_tags(article.body) %></p>
+            <p style="text-align: justify;"><%= truncate(strip_tags(article.body), length: 150) %></p>
           </div>
 
-          <% unless article.may_publish? %>
-            <p class="text-right"><i class="fa fa-check manage-button" style=" font-size: 25px;color:#0d47a1;"aria-hidden="true"></i><p>
-          <%end%>
-
-        </div>
-        <div class="text-center txt-main-red small-font" style="margin-top:3px;">
-          <div class="tooltip">
-            <%= link_to(edit_article_path(article), id: "edit-button") do %>
-              <i class="fa fa-pencil manage-button" style="font-size:25px;" aria-hidden="true"></i>
-            <%end%>
-            <p class="tooltiptext">Editar</p>
-          </div>
-
-          <div class="tooltip">
-            <%= link_to(article, method: :delete, data: {confirm: "¿Estás seguro?"}) do %>
-                <i class="fa fa-trash manage-button" style="font-size:25px;" aria-hidden="true"></i>
-            <%end%>
-            <p class="tooltiptext">Eliminar</p>
-          </div>
-
-          <div class="tooltip">
-            <% if article.may_publish? %>
-              <%= link_to("/articles/#{article.id}/publish", method: :put) do %>
-                <i class="fa fa-check manage-button" style="font-size:25px;" aria-hidden="true"></i>
+          <div class="text-center txt-main-red small-font" style="margin-top:3px;">
+            <div class="tooltip">
+              <%= link_to(edit_article_path(article), id: "edit-button") do %>
+                <i class="fa fa-pencil manage-button" style="font-size:25px;" aria-hidden="true"></i>
               <%end%>
-            <%end%>
-            <p class="tooltiptext">Publicar</p>
+              <p class="tooltiptext">Editar</p>
+            </div>
+
+            <div class="tooltip">
+              <%= link_to(article, method: :delete, data: {confirm: "¿Estás seguro?"}) do %>
+                  <i class="fa fa-trash manage-button" style="font-size:25px;" aria-hidden="true"></i>
+              <%end%>
+              <p class="tooltiptext">Eliminar</p>
+            </div>
+
+            <div class="tooltip">
+              <% if article.may_publish? %>
+                <%= link_to("/articles/#{article.id}/publish", method: :put) do %>
+                  <i class="fa fa-check manage-button" style="font-size:25px;" aria-hidden="true"></i>
+                <%end%>
+              <%end%>
+              <p class="tooltiptext">Publicar</p>
+            </div>
           </div>
+
         </div>
+
       </div>
     <%end%>
   </div>
